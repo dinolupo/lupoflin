@@ -1,0 +1,23 @@
+node_modules/
+build/
+dist/
+ipk/
+releases/
+.tmp/
+.npm/
+*.log
+.DS_Store
+
+# Local references downloaded for the agent (see docs/ref/README.md)
+/ref/
+
+# Server address and dev credentials: never committed
+static/config.local.json
+
+dist
+releases
+.tmp
+build
+
+# Private brand overlay (name, colours, logo, app id): never committed
+/brand.local/

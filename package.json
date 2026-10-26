@@ -1,0 +1,24 @@
+{
+  "name": "lupoflin",
+  "version": "0.1.0",
+  "description": "Netflix-like Jellyfin client for LG webOS TV, drawn with LightningJS (WebGL)",
+  "type": "module",
+  "scripts": {
+    "build": "lng build",
+    "test": "node --test test/*.test.mjs",
+    "check:api": "node scripts/api-smoke.mjs",
+    "check:ui": "mkdir -p .tmp && lng build > .tmp/build.log 2>&1 && node scripts/ui-check.mjs --brief profile:dev wait:home \"until:s.data.rows && s.data.rows.length>1\" key:Down key:Right sleep:1500 visible:20 shot:home",
+    "check": "npm test && npm run check:api && npm run check:ui",
+    "check:regress": "node scripts/regress.mjs",
+    "package": "node scripts/package.mjs",
+    "tv": "node scripts/tv.mjs",
+    "telemetry": "node scripts/telemetry-server.mjs"
+  },
+  "dependencies": {
+    "@lightningjs/sdk": "^5.5.7"
+  },
+  "devDependencies": {
+    "@lightningjs/cli": "^2.14.2",
+    "@webos-tools/cli": "^3.2.6"
+  }
+}

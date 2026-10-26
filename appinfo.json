@@ -1,0 +1,14 @@
+{
+  "id": "com.dinuxnode.lupoflin",
+  "version": "0.1.0",
+  "vendor": "dinuxnode",
+  "type": "web",
+  "main": "index.html",
+  "title": "LupoFlin",
+  "icon": "static/icon.png",
+  "largeIcon": "static/largeIcon.png",
+  "bgColor": "#141414",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true,
+  "requiredACG": []
+}
