@@ -1,6 +1,6 @@
 {
   "name": "lupoflin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Netflix-like Jellyfin client for LG webOS TV, drawn with LightningJS (WebGL)",
   "type": "module",
   "scripts": {

@@ -329,6 +329,18 @@ export default class DetailsView extends Lightning.Component {
     if (!episodes || !episodes.length) return
     const { client } = this
     const wide = layout.wide
+    const entries = episodes.map(ep => ({
+      id: ep.id,
+      label: ep.index ? `${ep.index}. ${ep.name}` : ep.name,
+      imageUrl: ep.imageTag ? client.imageUrl(ep.id, { tag: ep.imageTag, maxWidth: wide.w }) : null,
+    }))
+    // Row builds its tiles once: for a new season the existing row must be refilled, not patched.
+    const existing = this.tag('Body.Episodes')
+    if (existing) {
+      existing._index = 0
+      existing.updateEntries(entries)
+      return
+    }
     this.tag('Body').patch({
       Episodes: {
         type: Row,
@@ -336,11 +348,7 @@ export default class DetailsView extends Lightning.Component {
         title: 'Episodi',
         tile: wide,
         showLabels: true,
-        entries: episodes.map(ep => ({
-          id: ep.id,
-          label: ep.index ? `${ep.index}. ${ep.name}` : ep.name,
-          imageUrl: ep.imageTag ? client.imageUrl(ep.id, { tag: ep.imageTag, maxWidth: wide.w }) : null,
-        })),
+        entries,
       },
     })
   }

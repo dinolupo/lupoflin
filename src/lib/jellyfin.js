@@ -2,7 +2,7 @@
 // Every endpoint here is checked against ref/jellyfin-openapi.json (server 12.3.0): see docs/ref/jellyfin-api.md.
 // Tested by test/jellyfin.test.mjs (L0) and scripts/api-smoke.mjs (L1).
 
-export const CLIENT = { name: 'LupoFlin', version: '0.1.0' }
+export const CLIENT = { name: 'LupoFlin', version: '0.1.1' }
 
 export class JellyfinError extends Error {
   constructor(message, status) {
